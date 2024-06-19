@@ -1,41 +1,30 @@
 {
-  "name": "cordova-plugin-background-mode",
-  "version": "0.7.3",
-  "description": "Prevent apps from going to sleep in background.",
-  "cordova": {
-    "id": "cordova-plugin-background-mode",
-    "platforms": [
-      "ios",
-      "android",
-      "browser"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/katzer/cordova-plugin-background-mode.git"
-  },
-  "keywords": [
-    "appplant",
-    "background",
-    "ecosystem:cordova",
-    "cordova-ios",
-    "cordova-android",
-    "cordova-browser"
-  ],
-  "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.0.0"
+    "name": "cordova-plugin-background-mode",
+    "version": "1.0",
+    "description": "cordova-plugin-background-mode",
+    "author": "<Your name>",
+    "license": "MIT-0",
+    "homepage": "<Your git repository>",
+    "repository": {
+      "type": "git",
+      "url": "<Your git repository>"
     },
-    {
-      "name": "android-sdk",
-      "version": ">=16"
-    }
-  ],
-  "author": "Sebastián Katzer",
-  "license": "Apache 2.0",
-  "bugs": {
-    "url": "https://github.com/katzer/cordova-plugin-background-mode/issues"
-  },
-  "homepage": "https://github.com/katzer/cordova-plugin-background-mode#readme"
-}
+    "cordova": {
+      "id": "cordova-plugin-background-mode",
+      "platforms": [
+        "android",
+        "ios"
+      ]
+    },
+    "keywords": [
+      "ecosystem:cordova",
+      "cordova-android",
+      "cordova-ios",
+      "cordova-electron",
+      "cordova",
+      "android",
+      "ios",
+      "electron",
+      "example"
+    ]
+  }

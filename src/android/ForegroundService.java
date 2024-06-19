@@ -21,6 +21,8 @@
 
 package de.appplant.cordova.plugin.background;
 
+
+//import androidx.core.app.ServiceCompat;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Notification;
@@ -140,6 +142,32 @@ public class ForegroundService extends Service {
         wakeLock.acquire();
     }
 
+//  private void keepAwake() {
+//     JSONObject settings = BackgroundMode.getSettings();
+//     boolean isSilent = settings.optBoolean("silent", false);
+
+//     if (!isSilent) {
+//         Notification notification = makeNotification();
+//         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+//            startForeground(NOTIFICATION_ID, notification,ServiceCompat.FOREGROUND_SERVICE_TYPE_MICROPHONE);
+//         } else {
+//            startForeground(NOTIFICATION_ID, notification);
+//         }
+//     }
+
+//     PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
+
+//     wakeLock = pm.newWakeLock(
+//             PARTIAL_WAKE_LOCK, "backgroundmode:wakelock");
+
+//     wakeLock.acquire();
+// }
+
+
+
+
+ 
+
     /**
      * Stop background mode.
      */
@@ -222,7 +250,7 @@ public class ForegroundService extends Service {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             PendingIntent contentIntent = PendingIntent.getActivity(
                     context, NOTIFICATION_ID, intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
+                   PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
 
             notification.setContentIntent(contentIntent);

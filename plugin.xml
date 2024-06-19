@@ -53,13 +53,6 @@
             </service>
         </config-file>
 
-        
-      
-
-<!--         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <service android:name="de.appplant.cordova.plugin.background.ForegroundService" /> 
-        </config-file> -->
-
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.WAKE_LOCK" />
         </config-file>
@@ -75,8 +68,6 @@
         <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.RECORD_AUDIO" />
         </config-file>
-
-
         
         <source-file
             src="src/android/BackgroundMode.java"

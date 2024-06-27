@@ -27,6 +27,12 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.os.SystemClock;
+
+
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
@@ -238,6 +244,10 @@ public class BackgroundMode extends CordovaPlugin {
 
         if (isDisabled || isBind)
             return;
+        
+        
+        scheduleAlarm(context);
+
 
         Intent intent = new Intent(context, ForegroundService.class);
 
@@ -251,6 +261,15 @@ public class BackgroundMode extends CordovaPlugin {
 
         isBind = true;
     }
+
+    private void scheduleAlarm(Context context) {
+    AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+    Intent intent = new Intent(context, ForegroundService.class);
+    PendingIntent pendingIntent = PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+
+    long triggerAtMillis = SystemClock.elapsedRealtime() + 60000; // Set the alarm to trigger after 1 minute
+    alarmManager.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtMillis, pendingIntent);
+}
 
     /**
      * Bind the activity to a background service and put them into foreground

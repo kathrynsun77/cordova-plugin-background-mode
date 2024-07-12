@@ -29,6 +29,20 @@ var exec    = require('cordova/exec'),
  *
  * @return [ Void ]
  */
+
+exports.setup = function() {
+    exec(null, null, 'BackgroundMode', 'setup', []);
+};
+exports.startMaintaining = function() {
+    exec(null, null, 'BackgroundMode', 'startMaintaining', []);
+};
+
+exports.endMaintaining = function() {
+    exec(null, null, 'BackgroundMode', 'endMaintaining', []);
+};
+
+
+
 exports.enable = function()
 {
     if (this.isEnabled())

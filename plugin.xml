@@ -2,7 +2,7 @@
 <plugin id="cordova-plugin-background-mode" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>cordova-plugin-background-mode</name>
 
- <js-module src="www/background-mode.js" name="BackgroundMode">
+    <js-module src="www/background-mode.js" name="BackgroundMode">
         <clobbers target="cordova.plugins.backgroundMode" />
         <clobbers target="plugin.backgroundMode" />
     </js-module>
@@ -26,8 +26,8 @@
 
         <header-file src="src/ios/APPBackgroundMode.h" />
         <source-file src="src/ios/APPBackgroundMode.m" />
-        <header-file src="src/ios/APPMethodMagic.h" />
-        <source-file src="src/ios/APPMethodMagic.m" />
+        <header-file src="src/ios/Maintini.h" />
+        <source-file src="src/ios/Maintini.m" />
     </platform>
 
     <!-- android -->
@@ -45,7 +45,7 @@
             <preference name="KeepRunning" value="true" />
         </config-file>
 
-      <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <service
               android:name="de.appplant.cordova.plugin.background.ForegroundService"
               android:foregroundServiceType="dataSync"
@@ -57,7 +57,7 @@
             <uses-permission android:name="android.permission.WAKE_LOCK" />
         </config-file>
 
-         <config-file target="AndroidManifest.xml" parent="/manifest">
+        <config-file target="AndroidManifest.xml" parent="/manifest">
             <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
         </config-file>
 
